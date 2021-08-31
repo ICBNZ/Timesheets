@@ -1,0 +1,102 @@
+@mixin btn {
+  letter-spacing: 0.04em;
+  font-size: "18px";
+  max-height: "50px";
+  margin-left: "100px";
+  padding: 10px;
+  text-decoration: none;
+  width: 180px;
+  border-radius: 0.2em;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    transition: 0.3s ease-in-out;
+  }
+}
+.main-icon-btn {
+  background-color: transparent;
+  border: none;
+  color: #2b7b80;
+  font-size: 18px;
+  margin-right: 0.5em;
+  transform: scaleX(-1);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+    background-color: transparent;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.main-btn {
+  @include btn;
+  background-color: #2b7b80;
+  color: white;
+  border: 0.1em solid #2b7b80;
+  margin-bottom: 1em;
+  &:hover {
+    color: darkcyan;
+    background-color: white;
+  }
+  &.sm {
+    width: auto;
+    margin-bottom: 0;
+    margin-left: 0.1em;
+    padding: "0.5em 0.7em";
+  }
+}
+
+.icon-btn {
+  background-color: transparent;
+  font-size: 25px;
+  transform: scaleX(-1) rotate(15deg);
+  margin-top: -5px;
+}
+
+.link-icon {
+  margin: 0 1em;
+  height: 2.5em;
+  filter: invert(1);
+}
+.logo {
+  height: 3em;
+  filter: invert(0.8);
+}
+
+@keyframes onload {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.link-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b7b80;
+  color: white;
+  border-radius: 0.2em;
+  border: none; // #2b7b80;
+  margin: 0.5em;
+  width: 400px;
+  height: 50px;
+  text-align: left;
+  letter-spacing: 0.1em;
+  padding: 2em;
+  font-size: 18px;
+  animation: onload 0.5s ease-in;
+
+  &:hover {
+    .link-icon {
+      transform: rotate(180deg);
+      transition: 0.5s ease-in-out;
+    }
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
+  }
+}

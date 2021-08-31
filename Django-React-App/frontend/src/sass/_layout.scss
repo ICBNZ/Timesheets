@@ -1,0 +1,221 @@
+@import "./typography";
+* {
+  box-sizing: border-box;
+}
+.main {
+  margin: auto;
+  color: darkcyan;
+  text-align: center;
+  background-image: url("../images/oriental-bay.png");
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  padding: 6% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-cont {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(246, 248, 249, 0.85);
+  border-radius: 0.1em;
+  height: auto;
+  padding: 50px;
+  min-height: 70vh;
+  &.sm {
+    width: 500px;
+  }
+  &.lg {
+    min-width: 80vw;
+  }
+}
+
+.timesheet-card {
+  background-color: #07575b;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.2em;
+  padding: 1.2em 1em;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  max-width: 800px;
+  margin-bottom: 0.4em;
+  transition: background-color 0.2s ease-in;
+
+  a {
+    color: white;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #003b46;
+    border: 1px solid #07575b;
+  }
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.active,
+.btn:hover {
+  color: white;
+}
+
+// Table
+$table-header: $dark-blue;
+$table-header-border: $dark-blue;
+$table-border: #e2e8ed;
+$row-odd: #f4f2f1;
+$row-even: #e4e7eb;
+
+.table-container {
+  display: block;
+  margin: 0.2em auto;
+  width: 90%;
+  max-width: 800px;
+  color: $dark-blue;
+}
+
+.flex-table {
+  display: flex;
+  flex-flow: row wrap;
+  transition: 0.5s;
+
+  &:nth-child(even) .flex-row {
+    background: $row-even;
+  }
+  p {
+    font-weight: 900;
+    font-size: 22px;
+  }
+  &.header {
+    background-color: $table-header;
+    color: white;
+  }
+}
+
+.flex-table .flex-row {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 7);
+  text-align: center;
+  padding: 0.5em 0.5em;
+  border-left: solid 0.5px $table-border;
+  border-bottom: solid 1px $table-border;
+  &.first {
+    width: calc(100% / 3.5);
+  }
+}
+
+.rowspan {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-flow: column wrap;
+  width: 75%;
+  padding: 0;
+  .flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-bottom: solid 1px $table-border;
+    &:hover {
+      background: #f5f5f5;
+      transition: 500ms;
+    }
+  }
+}
+
+.flex-cell {
+  width: calc(100% / 4); //1px = border right
+  text-align: center;
+  padding: 0.5em 0.5em;
+  border-right: solid 1px $table-border;
+}
+
+@media all and (max-width: 767px) {
+  .flex-table {
+    .flex-row {
+      width: calc(100% / 5); //1px = border right
+
+      &.first {
+        width: 100%;
+      }
+    }
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 430px) {
+  .flex-table {
+    .flex-row {
+      border-bottom: 0;
+      width: calc(100% / 4);
+      &.first {
+        width: 100%;
+        border-bottom: solid 1px $table-border;
+      }
+    }
+    .flex-row:last-of-type {
+      display: none;
+    }
+  }
+
+  .header {
+    .flex-row {
+      border-bottom: solid 1px;
+    }
+  }
+
+  .flex-row {
+    width: 100%; //1px = border right
+  }
+
+  .column {
+    width: 100%;
+    .flex-row {
+      border-bottom: solid 1px $table-border;
+    }
+  }
+
+  .flex-cell {
+    width: 100%; //1px = border right
+  }
+}

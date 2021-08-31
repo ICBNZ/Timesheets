@@ -1,0 +1,49 @@
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+$letter-spacing: 0.1em;
+$font-size: 18px;
+
+$dark-blue: #305f72;
+
+.title {
+  text-transform: capitalize;
+}
+.error {
+  font-size: 14px;
+  color: lightcoral;
+}
+
+h1 {
+  color: $dark-blue;
+  margin-bottom: 0.5em;
+  text-align: left;
+  font-family: "Rollover";
+  font-size: 40px;
+  letter-spacing: $letter-spacing;
+  font-weight: bold;
+}
+
+a {
+  letter-spacing: $letter-spacing;
+  font-size: $font-size;
+  text-decoration: none;
+  color: white;
+  font-family: "Omegasans";
+  &:hover {
+    color: lightgray;
+    text-decoration: none;
+  }
+}
+p {
+  font-size: $font-size;
+}
+h5,
+h4,
+p,
+input {
+  font-family: "Omegasans";
+  letter-spacing: $letter-spacing;
+}
+h5 {
+  margin-right: 0.5em;
+}
